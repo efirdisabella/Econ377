@@ -1,5 +1,9 @@
 ## Problem Set 
-
+--------------------------------------------------
+## In the simple linear regression model, Y= b0+b1X+U, the dependent variable is Y.
+  ## The error term U represents factors other than X that affect Y
+  ## The zero conditional mean assumption E[U | X] = 0 says the average of U does not depend on X
+  ## under the SLR model with E[Y | X =x] = b0 + b1x
 
 ## The OLS slope is b^1= cov(x,y)/var(x) 
 -7/5
@@ -49,4 +53,27 @@ yhat <- bhat0 +bhat1 *xbar
  ## wage estimates
  bhat1 <- 2/10
 wage = b0 + b1 *educ + U
- 
+
+## X and Y have the joint probabilty distribution of ...
+(4*0.2)+(4*0.3)+(6*0.5)
+## find cov(x,y)= E[X,Y]- E[x]*E[Y]
+x <- c(0,6,3)
+y <- c(3,8,7)
+pj <- c(0.2,0.3,0.5)
+ex <- sum(x*pj)
+ey <- sum(y*pj)
+exy <- (x*y)*pj
+finalexy <- sum(exy)
+finalexy -(ex*ey)
+
+## The population regression slope is b1 = cov(x,y)/var(x). When asked to find b1
+x <- c(0,4,2)
+y <- c(1,6,6)
+pj <- c(0.2, 0.3,0.5)
+ex <- sum(x*pj)
+ey <- sum(y*pj)
+exy <- (x*y)*pj
+sum(exy)
+covariance <- sum(exy)-(ex*ey)
+## continued, to find Var(x), = E[X^2]-E[X]^2. Square each x, then multiply by probabilities and sum.
+then solve
