@@ -1,0 +1,97 @@
+## Problem set 6
+
+  ## in OLS, the fitted value Yihat = b0hat + b1hat * Xi is the models prediction of Y at Xi
+  
+### The OLS residual Ui hat equals Yi- Yihat, aka actual Y minus fitted Y
+  
+  ## a positive residual Uihat > 0 means the OLS underpredicted Yi
+  
+  ## R2 is the fraction of the sample variation in Y explained by X.
+  
+  ## Total sum of squares as SST= SSE + SSR
+  
+  ## The sum of OLS residuals is always 0.
+  
+  ## an R2 close to 0 means that the OLS explains little of the variation in Y, this is common and does not mean its a bad model
+  
+  ## The point (xbar, ybar) is ALWAYS on the OLS regression line
+
+  ## For the sample, find the OLS slope where b1hat = Σ(xi -xbar)(yi-ybar)/ Σ(xi-xbar)^2
+ 
+x <- c(8,2,5)
+y <- c(7,10,5)  
+xbar <- mean(x)
+ybar <- mean(y)
+covxy <- cov(x,y)
+varx <- var(x)
+b1hat <- covxy/varx
+b1hat
+
+## For the sample, find the OLS intercept b0hat = Ybar - b1hat * Xbar
+x <- c(1,6,5)
+y <- c(6,6,10)
+xbar <- mean(x)
+ybar <- mean(y)
+covxy <- cov(x,y)
+varx <- var(x)
+b1hat <- covxy/varx
+b0hat <- ybar - b1hat * xbar
+b0hat
+
+## For the sample, fit the OLS line yhat = b0hat + b1hat * x and predict yhat at x= some value
+x <- c(1,7,1)
+y <- c(12,3,3)
+xbar <- mean(x)
+ybar <- mean(y)
+covxy <- cov(x,y)
+varx <- var(x)
+b1hat <- covxy/varx
+b0hat <- ybar - b1hat * xbar
+b0hat
+x_new <- 7
+y_predict <- b0hat + b1hat * x_new
+y_predict
+
+## A fitted line is yhat = 3 + (9/10)x. Find the fitted value yhat at x = 14
+yhat <- 5+(5/10)*15
+yhat
+## A fitted line is ^^^^. A perso has x= 11 and actual y=7. Find the residual uhat = y-yhat.
+yhat <- 2+(7/10)*8
+y <- 4
+uhat <- y-yhat
+uhat
+## a fitted slope is b1hat = 5/10. using deltaYhat = b1hat * deltaX, find the predicted change in Y when X rises by 2. 
+deltaYhat <- (8/10)*10
+deltaYhat
+## For the fitted line, and 3 points, find SSR= Σ(Yi-Yihat)^2
+# Given data
+x <- c(2, 9, 6)
+y <- c(13, 2, 1)
+yhat <- 4 + (6/10) * x
+uhat <- y - yhat
+SSR <- sum(uhat^2)
+SSR
+## a regression has SST = 279 and SSR = 99 . Find the explained sum of squares SSE= SST-SSR
+SST <- 323
+SSR <- 150
+SST - SSR
+## Find R^2 = SSE/SST or 1-SSR/SST
+SST <- 327
+SSR <- 165
+1- (SSR/SST)
+## Find R^2 using SSE/SST
+SSE <- 60
+SST <- 315
+SSE/SST
+## a regression has SST and SSR. What fraction of the variation in Y is Unexplained?
+SST <- 389
+SSR <- 72
+unexplained <- SSR/SST
+unexplained
+## A regression has SST and R^2. Find SSR
+R2 <- 47/100
+SST <- 294
+unexplained <- 1-R2
+SSR <- unexplained * SST
+SSR
+
