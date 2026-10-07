@@ -351,5 +351,89 @@ corXY = covXY / (sdX * sdY)
 ## Linear regression
 lm(wage ~ educ, data = wage1)
 
+## problem set 3
+## ------------------------------------------
+## the sample variance divides the sum of squared deviations from the mean by n-1
+
+## The correlation between 2 variables is always between -1 and 1
+ ## for a descrete random variable X, the expected value E[X] equals the sum of each value times its probability
+## for a discrete random variable X, E[X^2] equals the sum of each squared value times its probability
+## In R, sd(x) gives the sample standard deviation, diving by n-1
+
+
+## The sample mean is 1/n times the sumation of xi. Find xbar for x(...)
+x <- c(3,8,12)
+mean(x)
+
+## sample variance is s^2x= 1/n-1 * sum(xi-xbar)^2. Compute for x vector
+x <- c(5,8,0)
+var(x)
+
+## sample sd
+x <- c(5,0,6)
+sd(x)
+
+## sample cov
+x <- c(3,6,2)
+y <- c(3,0,6)
+cov(x,y)
+
+## sample correlation: sxy is covariance, sx is var of x and sy is variance of y
+sxy <- -3
+sx <- 5
+sy <- 3
+cor <- sxy/(sx*sy)
+cor
+
+## probability- find E[X]
+p <- 0.5
+heads <- 2
+tails <- 4
+ex <- (heads*p)+(tails*p)
+ex
+
+## probability- find E[x]^2
+p <- 0.5
+heads <- 4
+tails <- 1
+ex2 <- ((p*heads)+(tails*p))^2
+ex2
+
+## a random variable X takes the following values, each with a set probability. Find E[x]
+x <- c(1,9,2)
+prob <- c(1/3,1/3,1/3)
+ex <- sum(x*prob)
+ex
+
+## For X taking values , each with a set probability, find E[X^2]
+x <- c(3,4,5)
+prob <- c(1/3,1/3,1/3)
+ex2 <- sum((x^2)*prob)
+ex2
+
+## a random variable X equals a number with probability of a number, and equals a different number with a different probability. Find E[x]
+x <- c(5,6)
+prob <- c(0.9, 0.1)
+ex <- sum(x*prob)
+ex
+
+## for the same X-- value with set prob, find E[x^2]
+x <- c(10,10)
+prob <- c(0.1,0.9)
+ex2 <- sum((x^2)*prob)
+ex2
+
+## a random variable X takes values with different probabilities. Find E[X]
+x <- c(9,5,5)
+prob <- c(0.2,0.5,0.3)
+ex <- sum(x*prob)
+ex
+
+## for X taking values with different probabilities, find E[X^2]
+x <- c(8,9,3)
+prob <- c(0.2,0.5,0.3)
+ex2 <- sum((x^2)*prob)
+ex2
+
 
 
